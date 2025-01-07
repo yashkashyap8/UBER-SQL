@@ -6,6 +6,8 @@ select * from rides;
 select * from passangers;
 select * from drivers;
 
+#Set 1:
+
 #Q1 What are & how many unique pickup locations are there in the dataset?
 select distinct(r.pickup_location) from rides r ;
 select count(distinct(r.pickup_location)) from rides r;
@@ -95,7 +97,7 @@ select r.ride_id from rides r where pickup_location=dropoff_location;
 
 
 
-#Intermediate Level:     
+#Set 2:     
 
                  
 #Q1 List the passengers who have taken rides from at least 300 different pickup locations.
@@ -199,7 +201,7 @@ rides r1 join (select pickup_location,min(ride_duration) as min_duration from ri
 on r1.pickup_location = r2.pickup_location and r1.ride_duration = r2.min_duration;
 
 
-#Advanced Level:
+#Set 3:
 
 #Q1 List the drivers who have driven rides in all pickup locations.
 select d.driver_id from drivers d 
